@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="element">1</button>
+    <button class="element">2</button>
+    <button class="element">3</button>
+
+    <script>
+      const btn = document.getElementsByClassName("element");
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", () => {
+          console.log("i: ", i);
+        });
+      }
+    </script>
+  </body>
+</html>
