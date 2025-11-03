@@ -46,11 +46,11 @@ for (let i = 0; i < game_elements.length; i++) {
       computer_hand_emoji = "✂️";
     }
 
-    user_hands.innerHTML = `USER: ${user_hand_emoji}`;
-    computer_hands.innerHTML = `COMPUTER: ${computer_hand_emoji}`;
+    user_hands.innerHTML = `🙍‍♂️: ${user_hand_emoji}`;
+    computer_hands.innerHTML = `${computer_hand_emoji} :🖥️`;
 
     if (user_pick == computer_pick) {
-      winner.innerHTML = "NO POINTS";
+      winner.innerHTML = "Point —";
     } else if (
       (user_pick == "rock" && computer_pick == "scissor") ||
       (user_pick == "paper" && computer_pick == "rock") ||
@@ -58,15 +58,15 @@ for (let i = 0; i < game_elements.length; i++) {
     ) {
       user_point += 1;
       //   alert(`user won `);
-      winner.innerHTML = "USER GOT A POINT";
+      winner.innerHTML = "POINT: 🙍‍♂️";
     } else {
       computer_point += 1;
-      winner.innerHTML = "Computer GOT A POINT";
+      winner.innerHTML = `POINT: 🖥️`;
       //   alert("Computer won");
     }
     setTimeout(() => {
-      user_hands.innerHTML = `USER: `;
-      computer_hands.innerHTML = `COMPUTER: `;
+      user_hands.innerHTML = `🙍‍♂️: `;
+      computer_hands.innerHTML = `:🖥️`;
     }, 2000);
     if (trial == 5) {
       setTimeout(() => {
@@ -74,6 +74,6 @@ for (let i = 0; i < game_elements.length; i++) {
       }, 1000);
     }
 
-    score_board.innerText = `USER: ${user_point} COMPUTER: ${computer_point}`;
+    score_board.innerText = `🙍‍♂️: ${user_point} \n🖥️: ${computer_point}`;
   });
 }

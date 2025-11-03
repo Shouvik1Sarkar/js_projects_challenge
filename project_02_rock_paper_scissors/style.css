@@ -1,3 +1,86 @@
+/* Reset and layout */
 body {
-  background-color: rgb(37, 37, 37);
+  background-color: #1f1f1f;
+  color: white;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  /* height: 100vh; */
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#title {
+  color: pink;
+}
+
+#parentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 80%;
+  /* background-color: red; */
+}
+
+/* Right side info (points & winner) */
+#scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+  padding-right: 0px;
+  justify-items: right;
+}
+
+#points,
+#winner {
+  font-size: 1.5rem; /* like h4 */
+  font-weight: 500;
+  color: #f5f5f5;
+}
+#points {
+  margin-right: 10px;
+}
+
+/* Center section (hands + game) */
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Buttons / elements */
+.element {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 18px;
+  font-size: 2rem;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.element:hover {
+  transform: scale(1.15);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Optional: add subtle shadows for visual polish */
+.element:active {
+  transform: scale(1);
 }

@@ -21,6 +21,9 @@ let i = 0;
 let score = 0;
 // while (i < quiz.length) {
 // play.addEventListener("click", () => {
+// for (let x = 0; x < options.length; x++) {
+//   options[x].classList.add("invisible");
+// }
 function loadQuestion(i) {
   for (let x = 0; x < options.length; x++) {
     options[x].classList.remove("inactive", "bgwrong", "bgright");
@@ -71,7 +74,7 @@ play.addEventListener("click", () => {
     question.innerHTML = "Comgratulations! You completed the QUIZ🎉";
 
     for (let x = 0; x < options.length; x++) {
-      options[x].classList.add("inactive");
+      options[x].classList.add("invisible");
     }
     i = 0;
   }

@@ -11,9 +11,11 @@
   max-width: 300px;
   padding-left: 15px;
 }
-/* .inactive {
+.invisible {
   display: none;
 }
+
+/* 
 .bgright {
   background-color: rgb(8, 212, 8);
 }
