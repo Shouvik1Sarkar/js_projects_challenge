@@ -1,12 +1,16 @@
 * {
   font-family: sans-serif;
 }
+body {
+  color: white;
+  background-color: rgb(27, 27, 27);
+}
 
 .options {
   display: flex;
   align-items: center; /* vertical center */
   /* justify-content: center; */
-  border: 1px solid black;
+  border: 1px solid white;
   height: 50px;
   max-width: 300px;
   padding-left: 15px;
