@@ -1,3 +1,8 @@
+// export async function quiz() {
+//   let a = await fetch("https://opentdb.com/api.php?amount=10");
+//   return a;
+// }
+
 export const quiz = [
   {
     q: "Which keyword is used to declare a variable in JavaScript?",
