@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔍 GitHub Profile Stats</h1>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter GitHub username..."
+        />
+        <button id="search-btn">Search</button>
+      </div>
+
+      <div id="profile" class="profile-card hidden">
+        <img id="avatar" alt="Profile Picture" />
+        <h2 id="name">Name</h2>
+        <p id="bio">User bio will appear here...</p>
+        <div class="stats">
+          <p>👥 Followers: <span id="followers">0</span></p>
+          <p>📦 Repos: <span id="repos">0</span></p>
+          <p>⭐ Top Repo: <span id="top-repo">N/A</span></p>
+        </div>
+        <a id="profile-link" href="#" target="_blank">View on GitHub →</a>
+      </div>
+
+      <p id="error" class="error hidden">User not found. Try again!</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
