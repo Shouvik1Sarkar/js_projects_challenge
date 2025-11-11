@@ -23,6 +23,7 @@ async function fetch_data(user_input) {
   } catch (error) {
     profile_div.classList.add("hidden");
     error_div.classList.remove("hidden");
+
     error_div.innerText = `Error fetching data: ${error.message}`;
   }
 }
@@ -70,10 +71,16 @@ search_btn.addEventListener("click", async () => {
   const user = user_input.value.trim();
   if (!user) return;
 
-  // reset UI
   error_div.classList.add("hidden");
   profile_div.classList.add("hidden");
-  // profile_div.classList.remove("hidden");
+  lang_stat.classList.add("hidden");
+  lang_stat.innerHTML = "";
+  let language_store = {};
+  let sum = 0;
+
+  // Add loading state
+  search_btn.disabled = true;
+  search_btn.textContent = "Loading...";
   try {
     const get_data = await fetch_data(user);
     if (!get_data) {
@@ -104,6 +111,7 @@ search_btn.addEventListener("click", async () => {
       const topRepos = repo_count
         .sort((a, b) => b.stargazers_count - a.stargazers_count)
         .slice(0, 5);
+
       console.log("top-repos", topRepos);
       //   top_repo.innerText = topRepos;
       top_repo.innerText =
@@ -113,7 +121,10 @@ search_btn.addEventListener("click", async () => {
         topRepos.map((repo) => language(user, repo.name))
       );
       console.log("PARSED DATA:------ ", parsed_data);
-
+      if (parsed_data.message === "API rate limit exceeded") {
+        error_div.innerText = `GitHub API rate limit exceeded. Try again later.`;
+        throw new Error("GitHub API rate limit exceeded. Try again later.");
+      }
       // for (const key in parsed_data) {
       //   console.log("xxxxxxx: ", key);
       //   language_store[key] = (language_store[key] || 0) + parsed_data[key];
@@ -125,19 +136,33 @@ search_btn.addEventListener("click", async () => {
       });
 
       console.log("language: ", language_store);
+
       for (const key in language_store) {
         sum += language_store[key];
       }
-      console.log(sum);
-      // // for (let i = 0; i < Object.keys(language_store).length; i++) {
+
+      // Display language stats
+      lang_stat.classList.remove("hidden");
+
       for (const key in language_store) {
-        const ptag = document.createElement("h4");
+        const ptag = document.createElement("p");
+        const language_name = document.createElement("span");
+        const language_num = document.createElement("span");
+
+        language_name.classList.add("language_name");
+        language_num.classList.add("language_num");
+
         console.log("language store in loop: ", language_store);
         console.log("language store key in loop: ", key);
         console.log("language store value in loop: ", language_store[key]);
-        ptag.innerHTML = `${key}: ${((language_store[key] / sum) * 100).toFixed(
+        language_name.innerText = `${key}: `;
+        language_num.innerText = `${((language_store[key] / sum) * 100).toFixed(
           2
-        )}`;
+        )}%`;
+
+        // ptag.innerHTML = `${language_name}: ${language_num}%`;
+        ptag.appendChild(language_name);
+        ptag.appendChild(language_num);
         lang_stat.appendChild(ptag);
       }
 
@@ -148,6 +173,20 @@ search_btn.addEventListener("click", async () => {
   } catch (error) {
     profile_div.classList.add("hidden");
     error_div.classList.remove("hidden");
-    error_div.innerText = error.message;
+    const get_data = await fetch_data(user);
+    if (
+      get_data.message.slice(0, "API rate limit exceeded".length) ==
+      "API rate limit exceeded"
+    ) {
+      error_div.innerText = "API rate limit exceeded";
+      throw new Error("API rate limit exceeded.");
+    } else {
+      error_div.innerText = error.message;
+      console.log(get_data.message);
+    }
+  } finally {
+    // Reset loading state
+    search_btn.disabled = false;
+    search_btn.textContent = "Search";
   }
 });

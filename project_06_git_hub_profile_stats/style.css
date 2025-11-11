@@ -110,3 +110,38 @@ a#profile-link:hover {
 .hidden {
   display: none;
 }
+#lang_stat {
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 12px;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+}
+
+#lang_stat p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin: 6px 0;
+  background: #2a2a2a;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+#lang_stat p:hover {
+  background: #3a3a3a;
+}
+
+.language_name {
+  font-weight: 500;
+  color: #00a6ff; /* nice light blue */
+}
+
+.language_num {
+  font-weight: 600;
+  color: #ff4800; /* subtle orange accent */
+}
