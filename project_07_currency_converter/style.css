@@ -144,3 +144,36 @@ button#convert-btn:hover {
   border: 1px solid var(--border);
   margin-bottom: 0.3rem;
 }
+#display {
+  margin-top: 20px;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  border: 2px solid #00acc1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 172, 193, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Smooth pop animation when result updates */
+#display:not(:empty) {
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* .hidden {
+  display: none;
+} */
