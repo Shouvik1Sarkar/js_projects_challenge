@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple News Aggregator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <h1>📰 News Aggregator</h1>
+    <header>
+      <input type="text" id="search-input" placeholder="Search news..." />
+      <button id="click_it">search</button>
+    </header>
+
+    <!-- Category Buttons -->
+    <nav id="categories">
+      <button class="category" id="technology">Technology</button>
+      <button class="category" id="sports">Sports</button>
+      <button class="category" id="business">Business</button>
+      <button class="category" id="health">Health</button>
+      <button class="category" id="science">Science</button>
+    </nav>
+
+    <div id="error_div"></div>
+    <!-- Container where news cards will load -->
+    <main id="news-container">
+      <!-- <div class="news-card">
+        <img class="news-img" src="" alt="news image" />
+
+        <h3 class="news-title">News Title Here</h3>
+
+        <p class="news-description">News description will appear here...</p>
+
+        <a class="news-link" href="#" target="_blank">Read Full Article →</a>
+      </div> -->
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
