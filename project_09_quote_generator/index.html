@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Quote Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card" role="main">
+      <header>
+        <div>
+          <h1>Daily motivation</h1>
+          <div class="sub">Get inspired and work</div>
+        </div>
+        <!-- <div class="sub" id="source">Source: quotable.io</div> -->
+        <select class="sub" id="select_cat">
+          <option value="">select</option>
+          <option value="wisdom">wisdom</option>
+          <option value="philosophy">philosophy</option>
+          <option value="life">life</option>
+          <option value="truth">truth</option>
+          <option value="inspirational">inspirational</option>
+          <option value="relationships">relationships</option>
+          <option value="love">love</option>
+          <option value="faith">faith</option>
+          <option value="humor">humor</option>
+          <option value="success">success</option>
+          <option value="courage">courage</option>
+          <option value="happiness">happiness</option>
+          <option value="art">art</option>
+          <option value="writing">writing</option>
+          <option value="fear">fear</option>
+          <option value="nature">nature</option>
+          <option value="time">time</option>
+          <option value="freedom">freedom</option>
+          <option value="death">death</option>
+          <option value="leadership">leadership</option>
+        </select>
+      </header>
+
+      <section class="quote-wrap" aria-live="polite">
+        <div class="quote-icon">“</div>
+        <blockquote id="quote">
+          <p id="quote-text">Loading a thoughtful quote...</p>
+          <div class="author" id="quote-author">—</div>
+        </blockquote>
+      </section>
+
+      <footer>
+        <div class="meta-row">
+          <div class="log" id="status">Ready</div>
+          <div class="controls">
+            <button id="copyBtn" class="small">Copy</button>
+            <button id="newBtn" class="btn-ghost small">New Quote</button>
+            <button id="twitterBtn" class="btn-primary small">Tweet</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
