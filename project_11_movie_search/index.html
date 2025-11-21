@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <span id="parent_container"> -->
+    <button id="fav_section">click me</button>
+    <a id="logo">🎬 MovieFinder</a>
+    <div id="search_container" class="container">
+      <h1>Movie Search</h1>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a movie..."
+        />
+
+        <select
+          id="category"
+          style="
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: #1c1c1c;
+            color: white;
+            border: none;
+            font-size: 1rem;
+          "
+        >
+          <option value="">category</option>
+          <option value="movie">Movie</option>
+          <option value="series">Series</option>
+          <option value="episode">Episode</option>
+        </select>
+
+        <button id="btn">Search</button>
+      </div>
+
+      <div id="search_for"></div>
+
+      <div class="results" id="result_container">
+        <!-- Movie Cards will go here -->
+        <div class="card">
+          <img src="#" alt="Movie Poster" />
+          <h3>Movie Title</h3>
+          <p>2024</p>
+        </div>
+
+        <div class="card">
+          <img src="#" alt="Movie Poster" />
+          <h3>Movie Title</h3>
+          <p>2023</p>
+        </div>
+      </div>
+    </div>
+    <div class="pagination" id="pagination_id">
+      <button id="prevBtn" class="page-btn hidden">⬅ Prev</button>
+      <span id="pageNum">Page <span id="pageNumber">1</span></span>
+      <button id="nextBtn" class="page-btn">Next ➡</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="movieModal" class="modal hidden">
+      <div class="modal-content" id="modal-content">
+        <!-- <span id="closeModal" class="close">&times;</span> -->
+
+        <!-- <div class="modal-body" id="modal_body"> -->
+        <!-- <img id="modalPoster" /> -->
+
+        <!-- <div class="modal-details" id="modal_details">
+            <h2 id="modalTitle"></h2>
+            <button id="bookmarkBtn" class="bookmark-btn">⭐ Bookmark</button>
+            <p id="modalYear"></p>
+            <p id="modalType"></p>
+            <p id="modalRated"></p>
+            <p id="modalReleased"></p>
+            <p id="modalRuntime"></p>
+            <p id="modalGenre"></p>
+            <p id="modalDirector"></p>
+            <p id="modalActors"></p>
+            <p id="modalPlot"></p> -->
+        <!-- </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <div id="movieModal_skeleton" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+
+        <div class="modal-body">
+          <img id="modalPoster" />
+        </div>
+      </div>
+    </div>
+    <!-- </span> -->
+
+    <div id="favoritesSection" class="hidden">
+      <div class="fav-header">
+        <h2>Your Bookmarked Movies</h2>
+        <span id="closeFav" class="close-fav">&times;</span>
+      </div>
+
+      <div id="favoritesContainer" class="fav-grid"></div>
+    </div>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>
