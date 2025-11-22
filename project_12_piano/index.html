@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dark Themed CSS Piano (C → C)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <!-- <div>
+          <div class="title">Dark Piano • CSS Only</div>
+          <div class="subtitle">
+            One octave — C → C (hover &amp; click effects)
+          </div>
+        </div>
+        <div class="subtitle">
+          IDs: use names like <code>c</code>, <code>c-sharp</code> (for C#),
+          <code>d</code>, ...
+        </div> -->
+      </div>
+
+      <div class="piano" role="application" aria-label="Dark themed piano">
+        <!-- black keys layer sits above white keys -->
+        <div class="black-keys" aria-hidden="true">
+          <!-- black keys; id names use "-sharp" for sharps (C# → c-sharp) -->
+          <div id="C#" class="key black key-c-sharp" data-note="C#">
+            <span class="key-label">C♯</span>
+          </div>
+          <div id="D#" class="key black key-d-sharp" data-note="D#">
+            <span class="key-label">D♯</span>
+          </div>
+          <div id="F#" class="key black key-f-sharp" data-note="F#">
+            <span class="key-label">F♯</span>
+          </div>
+          <div id="G#" class="key black key-g-sharp" data-note="G#">
+            <span class="key-label">G♯</span>
+          </div>
+          <div id="A#" class="key black key-a-sharp" data-note="A#">
+            <span class="key-label">A♯</span>
+          </div>
+        </div>
+
+        <!-- white keys -->
+        <div class="white-keys" role="list">
+          <div id="C" class="key white" data-note="C" role="listitem">
+            <span class="key-label">C</span>
+          </div>
+          <div id="D" class="key white" data-note="D" role="listitem">
+            <span class="key-label">D</span>
+          </div>
+          <div id="E" class="key white" data-note="E" role="listitem">
+            <span class="key-label">E</span>
+          </div>
+          <div id="F" class="key white" data-note="F" role="listitem">
+            <span class="key-label">F</span>
+          </div>
+          <div id="G" class="key white" data-note="G" role="listitem">
+            <span class="key-label">G</span>
+          </div>
+          <div id="A" class="key white" data-note="A" role="listitem">
+            <span class="key-label">A</span>
+          </div>
+          <div id="B" class="key white" data-note="B" role="listitem">
+            <span class="key-label">B</span>
+          </div>
+          <div id="C2" class="key white" data-note="C2" role="listitem">
+            <span class="key-label">C</span>
+          </div>
+        </div>
+
+        <!-- <div class="legend">
+          Tip: IDs follow the note names. For sharps I used `-sharp` (e.g.
+          <code>c-sharp</code>) so they are valid and easy to select in CSS.
+        </div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
