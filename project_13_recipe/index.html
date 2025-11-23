@@ -1,0 +1,165 @@
+<!-- GET https://www.themealdb.com/api/json/v1/1/search.php?s=chicken -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Minimal Recipe UI — Dark</title>
+    <meta
+      name="description"
+      content="Clean, minimal recipe app UI (HTML + CSS only)"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <aside class="sidebar">
+        <div class="brand" id="brand_id">
+          <div class="logo">R</div>
+          <div>
+            <h2>Recipe</h2>
+            <p class="muted">Delicious ideas • Minimal</p>
+          </div>
+        </div>
+
+        <div class="search">
+          <input
+            id="user_input"
+            aria-label="Search recipes"
+            placeholder="Search (eg. pasta, curry, tofu)"
+          />
+          <button id="search" aria-label="Search">Go</button>
+        </div>
+
+        <div class="filters">
+          <h4>Categories</h4>
+          <div class="chips" id="">
+            <div class="chip">All</div>
+            <div class="chip">Breakfast</div>
+            <div class="chip">pizza</div>
+            <div class="chip">pasta</div>
+            <div class="chip">tacos</div>
+            <div class="chip">Quick</div>
+            <div class="chip">Dessert</div>
+          </div>
+        </div>
+
+        <div class="saved">
+          <h4>Saved</h4>
+          <p>No saved recipes yet</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="toolbar">
+          <div class="title">
+            <h1>Popular this week</h1>
+            <p class="muted">Hand-picked recipes for your table</p>
+          </div>
+
+          <div class="sort">
+            <label class="muted" for="sort">Sort</label>
+            <select id="sort">
+              <option value="popular">Most Popular</option>
+              <option value="recent">Most Recent</option>
+              <option value="time">Cooking Time</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          id="errormessage"
+          class="hidden"
+          role="alert"
+          aria-live="assertive"
+        >
+          <span class="icon">⚠️</span>
+          <span class="text" id="error_text">----</span>
+        </div>
+        <section class="grid" id="grid_id">
+          <!-- add role and aria-live to announce to screen readers -->
+
+          <!--  featured dish -->
+          <!-- <article class="card-item featured">
+            <img
+              src="https://picsum.photos/seed/risotto/800/600"
+              alt="featured recipe"
+            />
+            <div class="info">
+              <h3>Wild Mushroom Risotto</h3>
+              <p class="muted">
+                Creamy, comforting and elegant — perfect for weekend dinner.
+              </p>
+              <div class="featured_timing_div">
+                <div class="pill">45 min</div>
+                <div class="pill">Intermediate</div>
+              </div>
+            </div>
+          </article> -->
+
+          <!-- small cards -->
+          <!-- <article class="card-item">
+            <img src="https://picsum.photos/seed/pasta/600/400" alt="Pasta" />
+            <div class="card-body">
+              <h3>Garlic Lemon Pasta</h3>
+              <div class="meta">
+                <div class="muted">Easy • 20 min</div>
+                <div class="muted">4 steps</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-item">
+            <img src="https://picsum.photos/seed/salad/600/400" alt="Salad" />
+            <div class="card-body">
+              <h3>Bright Quinoa Salad</h3>
+              <div class="meta">
+                <div class="muted">Vegan • 15 min</div>
+                <div class="muted">No-cook</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-item">
+            <img src="https://picsum.photos/seed/curry/600/400" alt="Curry" />
+            <div class="card-body">
+              <h3>Slow-cooked Chickpea Curry</h3>
+              <div class="meta">
+                <div class="muted">Dinner • 60 min</div>
+                <div class="muted">Comfort</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-item">
+            <img src="https://picsum.photos/seed/tofu/600/400" alt="Tofu" />
+            <div class="card-body">
+              <h3>Sticky Sesame Tofu</h3>
+              <div class="meta">
+                <div class="muted">Quick • 18 min</div>
+                <div class="muted">Pan-fry</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-item">
+            <img
+              src="https://picsum.photos/seed/pancake/600/400"
+              alt="Pancake"
+            />
+            <div class="card-body">
+              <h3>Honey Ricotta Pancakes</h3>
+              <div class="meta">
+                <div class="muted">Breakfast • 25 min</div>
+                <div class="muted">Fluffy</div>
+              </div>
+            </div>
+          </article> -->
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
