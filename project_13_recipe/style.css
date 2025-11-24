@@ -355,6 +355,7 @@ body {
 /* Hidden utility (completely removed from layout & screen readers) */
 .hidden {
   display: none !important;
+  /* display: none; */
 }
 
 /* Optional "visible" state with subtle entrance animation */
@@ -390,4 +391,258 @@ body {
 }
 #brand_id {
   cursor: pointer;
+}
+/* Card must be positioned */
+.card-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hidden Save Button */
+.save-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  /* border: 2px solid red; */
+  border-radius: 8px;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Show on hover */
+.card-item:hover .save-button {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Hover effect for the button itself */
+.save-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+/* Saved section wrapper */
+.saved {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  backdrop-filter: blur(4px);
+}
+
+.saved h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.saved .empty-msg {
+  color: #bbb;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Grid for saved recipe cards */
+.saved-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+/* Small saved cards */
+.saved-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.saved-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Thumbnail image */
+.saved-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Info inside */
+.saved-card .info {
+  padding: 10px 12px;
+}
+
+.saved-card h3 {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.saved-card .muted {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* Modal background */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+
+  /* opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease; */
+}
+
+/* Show modal */
+/* .modal.show {
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+/* Modal card */
+.modal-content {
+  background: #141414;
+  width: min(90%, 700px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  padding-bottom: 30px;
+  animation: popin 0.28s ease;
+}
+
+@keyframes popin {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.15s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Recipe image */
+#modal-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Title */
+#modal-title {
+  padding: 20px 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Section titles */
+.section-title {
+  padding: 0 24px;
+  color: #ffdd99;
+  font-size: 18px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+/* Ingredients list */
+.ingredients-list {
+  padding: 0 40px;
+  margin: 0;
+  list-style: square;
+}
+
+.ingredients-list li {
+  color: #ccc;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Instructions */
+.instructions {
+  padding: 0 24px;
+  color: #ddd;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/*  */
+
+.tutorial-link {
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 10px 24px;
+  background: #1f1f1f;
+  color: #ffdd99;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.tutorial-link:hover {
+  background: #2c2c2c;
+  color: #ffe7b8;
+}
+.ingredients-list {
+  padding: 0 40px;
+  margin: 0;
+  list-style: square;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px 18px;
+}
+.bookmark-btn {
+  position: absolute;
+  left: 28%;
+  top: 10%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.15s ease;
+}
+
+.bookmark-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
