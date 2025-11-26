@@ -398,6 +398,7 @@ body {
 }
 
 /* Hidden Save Button */
+/* EXISTING: Card save button (hidden until hover) */
 .save-button {
   position: absolute;
   top: 10px;
@@ -405,22 +406,39 @@ body {
   padding: 4px 8px;
   font-size: 18px;
   background: rgba(0, 0, 0, 0.35);
-  /* border: 2px solid red; */
   border-radius: 8px;
   cursor: pointer;
-
   opacity: 0;
   transform: translateY(-6px);
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Show on hover */
+/* Show on card hover */
 .card-item:hover .save-button {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
+/* Hover effect for the button itself */
+.save-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ========== NEW: Modal save button (always visible) ========== */
+.modal-content .save-button {
+  position: static; /* Remove absolute positioning */
+  opacity: 1; /* Always visible */
+  transform: none; /* No transform */
+  pointer-events: auto; /* Clickable */
+  margin-bottom: 12px; /* Add some spacing below it */
+  background: rgba(255, 184, 107, 0.2); /* Slightly highlighted */
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+/* Show on hover */
 
 /* Hover effect for the button itself */
 .save-button:hover {
@@ -644,4 +662,7 @@ body {
 
 .bookmark-btn:hover {
   background: rgba(255, 255, 255, 0.25);
+}
+.save-button {
+  cursor: pointer;
 }
